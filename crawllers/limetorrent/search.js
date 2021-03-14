@@ -13,7 +13,8 @@ async function search(search, site = LIMETORRENT_SITE) {
     var page = await browser.newPage();
     await page.goto(site.replace(
       var searchitem = "{term}";
-      var res = searchitem.toLowerCase() , search));
+      var res = searchitem.toLowerCase();
+                    , search));
 
     var searchResults = await page.evaluate(async () => {
       var searchResults = document.querySelector("table.table2 > tbody");
