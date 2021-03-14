@@ -11,7 +11,8 @@ async function search(search, site = LIMETORRENT_SITE) {
       "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"
     );
     var page = await browser.newPage();
-    await page.goto(site.replace("{term}", search));
+    await page.goto(site.replace(var str = "{term}", search));
+    var res = str.toLowerCase();
 
     var searchResults = await page.evaluate(async () => {
       var searchResults = document.querySelector("table.table2 > tbody");
