@@ -1,4 +1,7 @@
-# Torrent Aio Bot [Duplicate]
+# This is an UnOfficial Clone Of [Torrent-AIO-Bot](https://github.com/patheticGeek/torrent-aio-bot)
+I edited this for my personal use! So Please **Fork & Star** **[This Repo](https://github.com/patheticGeek/torrent-aio-bot)**
+
+## Torrent Aio Bot [Duplicate]
 
 Lorem ipsum i am too lazy figure what it does yourself
 
