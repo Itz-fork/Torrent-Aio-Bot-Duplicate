@@ -112,3 +112,8 @@ torrent: {
 ```
 
 sites available: piratebay, 1337x, limetorrent
+
+## Credits & Thanks To,
+
+- **[PathetikGeek](https://github.com/patheticGeek/torrent-aio-bot)** - For The Whole Repo!
+- **[rony-alt-ac](https://github.com/rony-alt-ac)** - For Search Fix!
