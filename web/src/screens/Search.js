@@ -50,7 +50,7 @@ function Search({ api }) {
           id="term"
           name="term"
           label="Search Term"
-          placeholder="The forgotten army, Flames..."
+          placeholder="Enter a torrent name..."
           value={term}
           onChange={setTerm}
           required
