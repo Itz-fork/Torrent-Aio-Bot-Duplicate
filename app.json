@@ -2,7 +2,13 @@
   "name": "Torrent AIO Bot Duplicated",
   "description": "All in one bot for torrenting",
   "repository": "https://github.com/Hirusha-H/Torrent-Aio-Bot-Duplicate",
-  "keywords": ["node", "express", "bot", "torrent", "automation"],
+  "keywords": [
+    "node",
+    "express",
+    "bot",
+    "torrent",
+    "automation"
+  ],
   "website": "https://t.me/NexaBotsUpdates",
     "repository": "https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate",
     "success_url": "https://t.me/NexaBotsUpdates",
@@ -34,10 +40,20 @@
         "GDRIVE_PARENT_FOLDER": {
             "description": "Your Google Drive Folder Id. Team Drive Supported.",
             "required": true
-        },
+        }
     },
   "builpacks": [
-    { "url": "heroku/nodejs" },
-    { "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git" }
-  ]
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git"
+    }
+  ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
 }
