@@ -9,7 +9,6 @@ You might be lazy too so here ya go:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate)
 
-Please dont start a test torrent download on my website it works you dont need to just wastes my drive space. Be careful when adding torrents to my deployment as it is deployed everytime i commit code here so your downloads may be interrupted.
 
 #### The search section is currently unmaintained due to the inconsistency between proxy sites and their uptimes
 
@@ -37,6 +36,8 @@ Go to the build packs section in settings and click add buildpack and enter "htt
 ### To get gdrive upload:
 
 1. Go to https://developers.google.com/drive/api/v3/quickstart/nodejs and click on Enable the Drive API
+![](https://user-images.githubusercontent.com/77770753/114364329-e982df80-9b96-11eb-93b7-c88aed24ef25.png)
+
    copy client id and set an enviorment variable in heroku with name CLIENT_ID then copy client secret and set another env named CLIENT_SECRET.
 2. Goto https://\<project name>.herokuapp.com/drivehelp and paste your client id and secret and click "Get auth code", it will redirect you to login and you'll get a auth code after login paste that auth code in the auth code feild and click "Generate token" it'll give you a token. now set these as env variable CLIENT_ID, CLIENT_SECRET, AUTH_CODE and TOKEN.
 3. By default files are uploaded in the root of drive if you dont want to upload in root folder make a folder copy its id and set a env var GDRIVE_PARENT_FOLDER and value id of desired folder. The folder id will be the last part of the url such as in url "https://drive.google.com/drive/folders/1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-" the folder id is "1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-".
