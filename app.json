@@ -48,6 +48,6 @@
     },
     {
       "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git"
-        }
     }
+    ]
 }
