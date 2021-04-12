@@ -31,7 +31,7 @@
         },
         "AUTH_CODE": {
             "description": "Your Auth Code. You will get this after Login To Google Account.",
-            "required": true
+            "required": false
         },
         "TOKEN": {
             "description": "Your Token. Get it from https://<appname>.herokuapp.com/drivehelp",
@@ -48,7 +48,6 @@
     },
     {
       "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git"
-    }
-  ]
+        }
     }
 }
