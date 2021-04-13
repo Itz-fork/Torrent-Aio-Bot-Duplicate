@@ -23,11 +23,11 @@
         },
         "CLIENT_ID": {
             "description": "Your Google Drive Client Id. Read ReadMe for more info.",
-            "required": true
+            "required": false
         },
         "CLIENT_SECRET": {
             "description": "Your Google Drive Client Secret. Read ReadMe for more info.",
-            "required": true
+            "required": false
         },
         "AUTH_CODE": {
             "description": "Your Auth Code. You will get this after Login To Google Account.",
@@ -35,11 +35,11 @@
         },
         "TOKEN": {
             "description": "Your Token. Get it from https://<appname>.herokuapp.com/drivehelp",
-            "required": true
+            "required": false
         },
         "GDRIVE_PARENT_FOLDER": {
             "description": "Your Google Drive Folder Id. Team Drive Supported.",
-            "required": true
+            "required": false
         }
     },
   "builpacks": [
