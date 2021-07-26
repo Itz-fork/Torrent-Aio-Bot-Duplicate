@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const O337X_SITE = process.env.O337X_SITE || "https://1337x.to/search/{term}/1/";
+const O337X_SITE = process.env.O337X_SITE || "https://www.1337xx.to/search/{term}/1/";
 
 async function search(search, site = O337X_SITE) {
   try {
