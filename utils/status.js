@@ -11,14 +11,18 @@ async function status(path = "/app") {
 
     if (typeof dinfo === "string") throw Error(dinfo);
 
-    info += `Disk Avail: ${dinfo.available} \n`;
-    info += `Disk Total: ${dinfo.total} \n`;
-    info += `Disk Free: ${dinfo.free} \n`;
-    info += `Memory Total: ${prettyBytes(memory.external)} \n`;
-    info += `Heap Total: ${prettyBytes(memory.heapTotal)} \n`;
-    info += `Heap Used: ${prettyBytes(memory.heapUsed)} \n`;
-    info += `Memory Rss: ${prettyBytes(memory.rss)} \n`;
-    info += `Uptime: ${humanTime(process.uptime() * 1000)} \n`;
+    info += `<b>✯ Disk,</b> \n`;
+    info += `   <b>Total:</b> <code>${dinfo.total}</code> \n`;
+    //info += `   <b>Available:</b> ${dinfo.available} \n`;
+    info += `   <b>Used:</b> <code>${prettyBytes(dinfo.totalInBytes - dinfo.freeInBytes)}</code> \n`;
+    info += `   <b>Free:</b> <code>${dinfo.free}</code> \n\n`;
+    info += `<b>✯ Memory,</b> \n`;
+    info += `   <b>Total:</b> <code>${prettyBytes(memory.external)}</code> \n`;
+    info += `   <b>Rss:</b> <code>${prettyBytes(memory.rss)}</code> \n\n`;
+    info += `<b>✯ Heap,</b> \n`;
+    info += `   <b>Total:</b> <code>${prettyBytes(memory.heapTotal)}</code> \n`;
+    info += `   <b>Used:</b> <code>${prettyBytes(memory.heapUsed)}</code> \n\n`;
+    info += `<b>✯ Uptime:</b> <code>${humanTime(process.uptime() * 1000)}</code> \n`;
 
     return info;
   } catch (e) {

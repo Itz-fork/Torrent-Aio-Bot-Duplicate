@@ -8,7 +8,10 @@ async function diskinfo(path = "/") {
       path,
       available: prettyBytes(available),
       free: prettyBytes(free),
-      total: prettyBytes(total)
+      total: prettyBytes(total),
+      // Total and Available as bytes. needed to check used space
+      totalInBytes: total,
+      freeInBytes: free
     };
   } catch (e) {
     console.log(e);
