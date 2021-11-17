@@ -17,6 +17,10 @@
             "description": "Your Bot Token From @BotFather",
             "required": true
         },
+        "SITE": {
+            "description": "Your Heroku App Url",
+            "required": true
+        },
         "SEARCH_SITE": {
             "description": "Your Heroku App Url",
             "required": true
