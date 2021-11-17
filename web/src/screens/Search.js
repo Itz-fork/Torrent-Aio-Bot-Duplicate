@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
-const site = dev ? require("../config").site : process.env.SITE;
+const site = "https://thetorr.herokuapp.com/";
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
