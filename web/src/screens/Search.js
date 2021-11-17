@@ -3,6 +3,8 @@ import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
+const site = dev ? require("../config").site : process.env.SITE;
+
 function Search({ api }) {
   const [term, setTerm] = useState("");
   const [site, setSite] = useState("");
@@ -69,6 +71,6 @@ function Search({ api }) {
   );
 }
 
-Search.defaultProps = { api: "https://torrent-nexa.herokuapp.com/" };
+Search.defaultProps = { api: "$SITE" };
 
 export default Search;
