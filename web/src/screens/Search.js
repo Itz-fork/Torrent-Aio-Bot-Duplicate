@@ -71,6 +71,6 @@ function Search({ api }) {
   );
 }
 
-Search.defaultProps = { api: "${SITE}" };
+Search.defaultProps = { api: site };
 
 export default Search;
