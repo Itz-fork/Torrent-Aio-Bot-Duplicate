@@ -1,6 +1,9 @@
 {
   "name": "torrent-bot",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "Torrent bot for downloading and searching torrents",
   "main": "index.js",
   "scripts": {
