@@ -31,56 +31,22 @@ If you like to make your own version of [this mod](https://github.com/Itz-fork/T
 
 ⭐ - If you don't have those just don't fill them **but** if you have remember to use your own Google Dirve credentials
 
+#### Other configs
 
-## TODO after deploy
+- `DISABLE_WEB` - Set this to "true" if you don't wanna use the website
+- `O337X_SITE` - If you want to change search site for "1337x"
+- `LIMETORRENT_SITE` - If you want to change search site for "limetorrent"
+- `PIRATEBAY_SITE` - If you want to change search site for "piratebay"
 
-### To disable website
-
-If you only want telegram bot to be workinh set value of DISABLE_WEB env var to true.
-
-### To get torrent download working:
-
-Set a variable with key "SITE" and value is the link of your site. eg. "https://\<project name>.herokuapp.com". This is important to keep bot alive or server will stop after 30 min of inactivity.
-
-### To start a torrent bot:
-
-Set a enviorment variable with key "TELEGRAM_TOKEN" and token of your bot as value. [How to get token](https://core.telegram.org/bots/#creating-a-new-bot)
-To set a enviorment variable go to heroku dashboard open the app then go to Settings > Config vars > Reveal Config vars.
-
-### To get search working:
-
-The library used for web scrapping the torrent sites requires a custom buildpack on heroku. By default the search will happen on your deployment and you will need to configure the buildpack as described below. But if you don't want to do that you can specify and env SEARCH_SITE and set value to https://torrent-aio-bot.herokuapp.com/ . The frwd slash at end is necessary. This will make all the searches go thru my deployment and you don't need to configure buildpack.
-
-Go to the build packs section in settings and click add buildpack and enter "https://github.com/jontewks/puppeteer-heroku-buildpack.git" as buildpack url then click save changes. And then do a dummy git commit so that heroku will buid it using the buildpack this time. Then set the SEARCH_SITE env to same value as SITE.
-
-### To get gdrive upload:
-
-1. Go to https://developers.google.com/drive/api/v3/quickstart/nodejs and click on Enable the Drive API
-![](https://user-images.githubusercontent.com/77770753/114364329-e982df80-9b96-11eb-93b7-c88aed24ef25.png)
-
-   copy client id and set an enviorment variable in heroku with name CLIENT_ID then copy client secret and set another env named CLIENT_SECRET.
-2. Goto https://\<project name>.herokuapp.com/drivehelp and paste your client id and secret and click "Get auth code", it will redirect you to login and you'll get a auth code after login paste that auth code in the auth code feild and click "Generate token" it'll give you a token. now set these as env variable CLIENT_ID, CLIENT_SECRET, AUTH_CODE and TOKEN.
-3. By default files are uploaded in the root of drive if you dont want to upload in root folder make a folder copy its id and set a env var GDRIVE_PARENT_FOLDER and value id of desired folder. The folder id will be the last part of the url such as in url "https://drive.google.com/drive/folders/1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-" the folder id is "1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-".
-4. If you want team drive support open your teamdrive and copy the folder id from url eg. https://drive.google.com/drive/u/0/folders/0ABZHZpfYfdVCUk9PVA this is link of a team drive copy the last part "0ABZHZpfYfdVCUk9PVA" this will be your GDRIVE_PARENT_FOLDER. If you want them in a folder in teamdrive open the folder and use that folder's id instead.
-5. You're good to go. The gdrive status will be shown in gdrive.txt file when you click Open on the website downloads page. Bot wil automatically send you drive link when its uploaded.
-
-> Use this torrent for testing or when downloading to setup drive it is well seeded and downloads in ~10s
+> Note ⚠️ : Change the search site urls only if the search feature is broken (Not working).
 >
-> magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny
 
-## Changing the sites used for searching
 
-To change the pirate bay site, visit the site you would like to use search something there, copy the url eg. https://thepiratebay.org/search/whatisearched and replace the search with {term} so the url looks like https://thepiratebay.org/search/{term} ans set this to env var PIRATEBAY_SITE
+## API Endpoints 💻
 
-Same, if you want to change the limetorrents site visit the site you want to use and search for something, then replace the thing you searched for with {term} so final url looks like https://limetorrents.at/search?search={term} and set this value to env var LIMETORRENT_SITE
+**Prefix:** https://<project name>.herokuapp.com/api/v1
 
-Simillarly the enviorment variable for 1337x is O337X_SITE
-
-## API Endpoints
-
-Prefix: https://\<project name>.herokuapp.com/api/v1
-
-### For downloading:
+#### For downloading:
 
 | Endpoint          |    Params    |                                                                Return |
 | :---------------- | :----------: | --------------------------------------------------------------------: |
@@ -89,7 +55,7 @@ Prefix: https://\<project name>.herokuapp.com/api/v1
 | /torrent/remove   | link: string |                                { error: bool, errorMessage?: string } |
 | /torrent/status   | link: string |                 {error: bool, status: torrent, errorMessage?: string} |
 
-link is magnet uri of the torrent
+link is magnet url of the torrent
 
 ```
 torrent:  {
@@ -106,7 +72,7 @@ torrent:  {
 }
 ```
 
-### For searching:
+#### For searching:
 
 | Endpoint        |            Params            |                                                          Return |
 | :-------------- | :--------------------------: | --------------------------------------------------------------: |
@@ -132,9 +98,39 @@ torrent: {
 }
 ```
 
-sites available: piratebay, 1337x, limetorrent
+sites available: "piratebay", "1337x", "limetorrent"
 
-## Credits & Thanks To,
+**Written by:** [patheticGeek](https://github.com/patheticGeek) for [the original project](https://github.com/patheticGeek/torrent-aio-bot)
+
+
+## Issues (or Wiki?) 📨
+
+#### Custom client id and client secrets for Google drive upload:
+
+**Written by:** [patheticGeek](https://github.com/patheticGeek) for [the original project](https://github.com/patheticGeek/torrent-aio-bot)
+
+1. Go to https://developers.google.com/drive/api/v3/quickstart/nodejs and click on Enable the Drive API. Copy client id and set an enviorment variable in heroku with name CLIENT_ID then copy client secret and set another env named CLIENT_SECRET.
+2. Goto https://\<project name>.herokuapp.com/drivehelp and paste your client id and secret and click "Get auth code", it will redirect you to login and you'll get a auth code after login paste that auth code in the auth code feild and click "Generate token" it'll give you a token. now set these as env variable CLIENT_ID, CLIENT_SECRET, AUTH_CODE and TOKEN.
+3. By default files are uploaded in the root of drive if you dont want to upload in root folder make a folder copy its id and set a env var GDRIVE_PARENT_FOLDER and value id of desired folder. The folder id will be the last part of the url such as in url "https://drive.google.com/drive/folders/1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-" the folder id is "1rpk7tGWs_lv_kZ_W4EPaKj8brfFVLOH-".
+4. If you want team drive support open your teamdrive and copy the folder id from url eg. https://drive.google.com/drive/u/0/folders/0ABZHZpfYfdVCUk9PVA this is link of a team drive copy the last part "0ABZHZpfYfdVCUk9PVA" this will be your GDRIVE_PARENT_FOLDER. If you want them in a folder in teamdrive open the folder and use that folder's id instead.
+5. You're good to go. The gdrive status will be shown in "gdrive.txt" file when you click Open on the website downloads page. Bot wil automatically send you drive link when its uploaded.
+
+> Use this torrent for testing or when downloading to setup drive it is well seeded and downloads in ~10s
+>
+> magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny
+
+#### Changing the sites used for searching
+
+**Written by:** [patheticGeek](https://github.com/patheticGeek) for [the original project](https://github.com/patheticGeek/torrent-aio-bot)
+   
+To change the pirate bay site, visit the site you would like to use search something there, copy the url eg. https://thepiratebay.org/search/whatisearched and replace the search with {term} so the url looks like https://thepiratebay.org/search/{term} ans set this to env var `PIRATEBAY_SITE`
+
+Same, if you want to change the limetorrents site visit the site you want to use and search for something, then replace the thing you searched for with {term} so final url looks like https://limetorrents.at/search?search={term} and set this value to env var `LIMETORRENT_SITE`
+
+Simillarly the enviorment variable for 1337x is `O337X_SITE`
+
+
+## Credits & Thanks To ❤️,
 
 - **[PathetikGeek](https://github.com/patheticGeek/torrent-aio-bot)** - For The Whole Repo!
 - **[rony-alt-ac](https://github.com/rony-alt-ac)** - For Search Fix!
