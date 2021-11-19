@@ -9,10 +9,6 @@ If you like to make your own version of [this mod](https://github.com/Itz-fork/T
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate)
 
 
-> Note ⚠️ : The search feature is currently unmaintained due to the inconsistency between proxy sites and their uptimes
->
-
-
 ## Configs 📓
 
 #### Fill Before deploy,
@@ -129,8 +125,25 @@ Same, if you want to change the limetorrents site visit the site you want to use
 
 Simillarly the enviorment variable for 1337x is `O337X_SITE`
 
+#### Search feature isn't working:
+
+**Written by:** [Itz-fork](https://github.com/Itz-fork) for [the unofficial clone](https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate)
+
+Follow these steps 👇,
+  - Fork this repo and connect it to your heroku app
+  - Add the following buildpack to your heroku app (click to copy)
+    - ```
+        https://github.com/jontewks/puppeteer-heroku-buildpack.git
+      ```
+  - Redeploy your heroku app
+
+If the search feature still isn't working try checking your heroku apps [Configs](#configs-)
+
+> Note ⚠️ : The search feature is currently unmaintained due to the inconsistency between proxy sites and their uptimes
+>
+
 
 ## Credits & Thanks To ❤️,
 
-- **[PathetikGeek](https://github.com/patheticGeek/torrent-aio-bot)** - For The Whole Repo!
+- **[PathetikGeek](https://github.com/patheticGeek/torrent-aio-bot)** - This hardwork is done by this person!
 - **[rony-alt-ac](https://github.com/rony-alt-ac)** - For Search Fix!
