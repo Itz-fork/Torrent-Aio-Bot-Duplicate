@@ -1,16 +1,36 @@
-# This is an UnOfficial Clone Of [Torrent-AIO-Bot](https://github.com/patheticGeek/torrent-aio-bot)
-I edited this for my personal use! So Please **Fork & Star** **[This Repo](https://github.com/patheticGeek/torrent-aio-bot)**
+# UnOfficial Clone Of [Torrent-AIO-Bot](https://github.com/patheticGeek/torrent-aio-bot)
+This is an unofficial clone of **[Torrent-AIO-Bot](https://github.com/patheticGeek/torrent-aio-bot)**.
 
-## Torrent Aio Bot [Duplicate]
 
-Lorem ipsum i am too lazy figure what it does yourself
+## Deploy 👀
 
-You might be lazy too so here ya go:
+If you like to make your own version of [this mod](https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate), just click on "Deploy to Heroku" button 👇:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate)
 
 
-#### The search section is currently unmaintained due to the inconsistency between proxy sites and their uptimes
+> Note ⚠️ : The search feature is currently unmaintained due to the inconsistency between proxy sites and their uptimes
+>
+
+
+## Configs 📓
+
+#### Fill Before deploy,
+
+- `SITE` - Your Heroku app url
+- `SEARCH_SITE` - Your Heroku app url (You can also set this to "https://torrent-aio-bot.herokuapp.com/". [Not my site tho])
+- `TELEGRAM_TOKEN` - Your telegram bot token (Get it from [@BotFather](https://t.me/BotFather))
+- `GDRIVE_PARENT_FOLDER` - Your Google Folder Id (Team drive id supported)
+
+#### Fill after deploy
+
+- `CLIENT_ID` ⭐ - Your Google Drive Drive API Client ID (Defaults to: `202264815644.apps.googleusercontent.com` [rcone](https://rclone.org/)'s client id)
+- `CLIENT_SECRET` ⭐ - Your Google Drive Drive API Client Secret (Defaults to: `X4Z3ca8xfWDb1Voo-F9a7ZxJ` [rcone](https://rclone.org/)'s client secret)
+- `TOKEN` - Get this token from  https://<appname>.herokuapp.com/drivehelp (<appname> is your heroku app name)
+- `AUTH_CODE` - While Obtaining the "TOKEN" your website (heroku app) will ask you to login to your account. After a successful login you'll get this
+
+⭐ - If you don't have those just don't fill them **but** if you have remember to use your own Google Dirve credentials
+
 
 ## TODO after deploy
 
