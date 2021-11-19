@@ -1,7 +1,7 @@
 {
-  "name": "Torrent AIO Bot Duplicated",
+  "name": "Torrent AIO Bot [Clone]",
   "description": "All in one bot for torrenting",
-  "repository": "https://github.com/Hirusha-H/Torrent-Aio-Bot-Duplicate",
+  "repository": "https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate",
   "keywords": [
     "node",
     "express",
@@ -13,36 +13,40 @@
     "repository": "https://github.com/Itz-fork/Torrent-Aio-Bot-Duplicate",
     "success_url": "https://t.me/NexaBotsUpdates",
     "env": {
-        "TELEGRAM_TOKEN": {
-            "description": "Your Bot Token From @BotFather",
-            "required": true
-        },
-        "SITE": {
-            "description": "Your Heroku App Url",
-            "required": true
-        },
-        "SEARCH_SITE": {
-            "description": "Your Heroku App Url",
-            "required": true
-        },
-        "CLIENT_ID": {
-            "description": "Your Google Drive Client Id. Read ReadMe for more info.",
-            "required": false
-        },
-        "CLIENT_SECRET": {
-            "description": "Your Google Drive Client Secret. Read ReadMe for more info.",
-            "required": false
-        },
         "AUTH_CODE": {
             "description": "Your Auth Code. You will get this after Login To Google Account.",
             "required": false
         },
-        "TOKEN": {
-            "description": "Your Token. Get it from https://<appname>.herokuapp.com/drivehelp",
+        "CLIENT_ID": {
+            "description": "Your Google Drive Client Id. Read ReadMe for more info.",
+            "value": "202264815644.apps.googleusercontent.com",
+            "required": false
+        },
+        "CLIENT_SECRET": {
+            "description": "Your Google Drive Client Secret. Read ReadMe for more info.",
+            "value": "X4Z3ca8xfWDb1Voo-F9a7ZxJ",
             "required": false
         },
         "GDRIVE_PARENT_FOLDER": {
             "description": "Your Google Drive Folder Id. Team Drive Supported.",
+            "required": false
+        },
+        "SITE": {
+            "description": "Your Heroku App Url",
+            "value": "https://<appname>.herokuapp.com/",
+            "required": true
+        },
+        "SEARCH_SITE": {
+            "description": "Your Heroku App Url",
+            "value": "https://<appname>.herokuapp.com/",
+            "required": true
+        },
+        "TELEGRAM_TOKEN": {
+            "description": "Your Bot Token From @BotFather",
+            "required": true
+        },
+        "TOKEN": {
+            "description": "Your Token. Get it from https://<appname>.herokuapp.com/drivehelp",
             "required": false
         }
     },
@@ -53,5 +57,5 @@
     {
       "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git"
     }
-    ]
+  ]
 }
