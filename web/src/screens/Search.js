@@ -4,7 +4,7 @@ import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
 // 
-const site = process.env.SITE;
+const site = "your-heroku-app-url";
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
