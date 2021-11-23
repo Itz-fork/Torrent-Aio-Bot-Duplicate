@@ -4,7 +4,7 @@ import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
 // 
-const site = "your-heroku-app-url";
+const site = process.env.SITE;
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
@@ -72,6 +72,6 @@ function Search({ api }) {
   );
 }
 
-Search.defaultProps = { api: site };
+Search.defaultProps = { api: String(site) };
 
 export default Search;
