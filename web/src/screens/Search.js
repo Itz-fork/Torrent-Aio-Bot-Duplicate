@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
-import { site } from "../../../utils/keepalive";
+
+const s_site = require("../../../utils/keepalive");
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
@@ -70,6 +71,6 @@ function Search({ api }) {
   );
 }
 
-Search.defaultProps = { api: String(site) };
+Search.defaultProps = { api: String(s_site) };
 
 export default Search;
