@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
-
-const site = process.env.SEARCH_SITE || "https://torrent-aio-bot.herokuapp.com/";
+import { site } from "../../../utils/keepalive";
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
