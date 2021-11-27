@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
-const s_site = require("../cacheSite");
+const site = process.env.SEARCH_SITE;
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
