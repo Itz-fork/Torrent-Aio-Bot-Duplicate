@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import Picker from "../components/Picker";
 import SearchItem from "../components/SearchItem";
 
-const s_site = require("../../../utils/keepalive");
+const s_site = require("../cacheSite");
 
 function Search({ api }) {
   const [term, setTerm] = useState("");
@@ -71,6 +71,6 @@ function Search({ api }) {
   );
 }
 
-Search.defaultProps = { api: String(s_site) };
+Search.defaultProps = { api: String(site) };
 
 export default Search;
